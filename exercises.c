@@ -122,10 +122,10 @@ void inicializarLibro(Libro *libro, const char *titulo, const char *nombreAutor,
 
     libro->autor = (Autor *)malloc(sizeof(Autor));
 
-    if (libro->autor == NULL) exit(EXIT_FAILURE);
+    
 
     strcpy(libro->autor->nombre, nombreAutor);
-    libro->Autor->anioNacimiento = anioNacimiento;
+    libro->autor->anioNacimiento = anioNacimiento;
 
   }
 
