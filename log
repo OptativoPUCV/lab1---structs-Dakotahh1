@@ -183,3 +183,21 @@ exercises.c:128:17: error: invalid type argument of ‘->’ (have ‘Autor’)
       |                 ^~
 Compilation failed
 2d74acc
+Thu 14 Mar 2024 05:27:21 PM UTC: 
+ exercises.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+In file included from test.c:1:
+exercises.c: In function ‘inicializarLibro’:
+exercises.c:123:20: error: incompatible types when assigning to type ‘Autor’ from type ‘Autor *’
+  123 |     libro->autor = (Autor *)malloc(sizeof(Autor));
+      |                    ^
+exercises.c:127:19: error: ‘Libro’ has no member named ‘Autor’; did you mean ‘autor’?
+  127 |     strcpy(libro->Autor->nombre, nombreAutor);
+      |                   ^~~~~
+      |                   autor
+exercises.c:128:12: error: ‘Libro’ has no member named ‘Autor’; did you mean ‘autor’?
+  128 |     libro->Autor->anioNacimiento = anioNacimiento;
+      |            ^~~~~
+      |            autor
+Compilation failed
+c18d5a9
