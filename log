@@ -27,3 +27,40 @@ exercises.c:128:12: error: ‘Libro’ has no member named ‘Autor’; did you 
       |            autor
 Compilation failed
 ce4c72c
+Thu 14 Mar 2024 05:20:17 PM UTC: 
+ exercises.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:1:
+exercises.c: In function ‘inicializarLibro’:
+exercises.c:116:11: error: ‘libro’ redeclared as different kind of symbol
+  116 |     Libro libro = (Libro *)malloc(sizeof(Libro));
+      |           ^~~~~
+exercises.c:113:30: note: previous definition of ‘libro’ with type ‘Libro *’
+  113 | void inicializarLibro(Libro *libro, const char *titulo, const char *nombreAutor,
+      |                       ~~~~~~~^~~~~
+exercises.c:116:19: error: invalid initializer
+  116 |     Libro libro = (Libro *)malloc(sizeof(Libro));
+      |                   ^
+exercises.c:118:15: error: invalid operands to binary == (have ‘Libro’ and ‘void *’)
+  118 |     if (libro == NULL) exit(EXIT_FAILURE);
+      |               ^~
+exercises.c:120:17: error: invalid type argument of ‘->’ (have ‘Libro’)
+  120 |     strcpy(libro->titulo, titulo);
+      |                 ^~
+exercises.c:121:10: error: invalid type argument of ‘->’ (have ‘Libro’)
+  121 |     libro->anioPublicacion = anioPublicacion;
+      |          ^~
+exercises.c:123:10: error: invalid type argument of ‘->’ (have ‘Libro’)
+  123 |     libro->autor = (Autor *)malloc(sizeof(Autor));
+      |          ^~
+exercises.c:125:14: error: invalid type argument of ‘->’ (have ‘Libro’)
+  125 |     if (libro->autor == NULL) exit(EXIT_FAILURE);
+      |              ^~
+exercises.c:127:17: error: invalid type argument of ‘->’ (have ‘Libro’)
+  127 |     strcpy(libro->autor->nombre, nombreAutor);
+      |                 ^~
+exercises.c:128:10: error: invalid type argument of ‘->’ (have ‘Libro’)
+  128 |     libro->Autor->anioNacimiento = anioNacimiento;
+      |          ^~
+Compilation failed
+13c12dd

@@ -113,7 +113,7 @@ typedef struct {
 void inicializarLibro(Libro *libro, const char *titulo, const char *nombreAutor,
                       int anioNacimiento, int anioPublicacion) 
   {
-    Libro *libro = (Libro *)malloc(sizeof(Libro));
+    Libro libro = (Libro *)malloc(sizeof(Libro));
 
     if (libro == NULL) exit(EXIT_FAILURE);
 
