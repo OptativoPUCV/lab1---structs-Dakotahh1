@@ -1,4 +1,4 @@
-a #include <ctype.h>
+#include <ctype.h>
 #include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -9,14 +9,40 @@ Ejercicio 1: Encuentra el Elemento Mayor
 Descripción: Escribe una función que tome un arreglo de enteros
 y su tamaño, y devuelva el valor más grande del arreglo.
 */
-int findMax(int arr[], int size) { return 0; }
+int findMax(int arr[], int size) 
+{ 
+  int maximo = 0;
+
+  for (int i = 0; i < size; i++)
+    {
+      if (arr[i] > maximo)
+      {
+        maximo = arr[i];
+      }
+    }
+  
+  return maximo; 
+}
 
 /*
 Ejercicio 2: Invertir un Arreglo
 Descripción: Escribe una función que tome un arreglo y su tamaño, y luego
 invierta el orden de sus elementos.
 */
-void reverseArray(int arr[], int size) {}
+void reverseArray(int arr[], int size) 
+{
+  int aux = 0;
+
+  for(int i = size; i > 0; i--)
+    {
+      aux = arr[i];
+      for(int j = 0; j < i; j++)
+        {
+          arr[j] = aux;
+        }
+    }
+
+}
 
 /*
 Ejercicio 3: Filtrar Números Pares
@@ -26,7 +52,27 @@ los números pares del arreglo original.
 newsize apunta a una dirección válida que no ha sido inicializada con nigún valor específico. 
 *newsize debe almacenar el tamaño del nuevo arreglo que se retorna.
 */
-int *filterEvenNumbers(int arr[], int size, int *newSize) { return NULL; }
+int *filterEvenNumbers(int arr[], int size, int *newSize) 
+{ 
+  *newSize = 0;
+  
+  int *nuevoArreglo = (int *)malloc(sizeof(int));
+  
+  if (nuevoArreglo == NULL) exit(EXIT_FAILURE);
+  
+  for (int i = 0; i < size; i++)
+    {
+      for (int j = 0; j < *newSize; j++)
+        {
+          if (arr[i] % 2 == 0)
+          {
+            (*newSize)++;
+            nuevoArreglo[j] = arr[i];
+          }
+        }
+    }
+  return NULL; 
+}
 
 /*
 Ejercicio 4: Fusión de dos Arreglos Ordenados
@@ -65,7 +111,23 @@ typedef struct {
 } Libro;
 
 void inicializarLibro(Libro *libro, const char *titulo, const char *nombreAutor,
-                      int anioNacimiento, int anioPublicacion) {}
+                      int anioNacimiento, int anioPublicacion) 
+  {
+    Libro *libro = (Libro *)malloc(sizeof(Libro));
+
+    if (libro == NULL) exit(EXIT_FAILURE);
+
+    strcpy(libro->titulo, titulo);
+    libro->anioPublicacion = anioPublicacion;
+
+    libro->autor = (Autor *)malloc(sizeof(Autor));
+
+    if (libro->autor == NULL) exit(EXIT_FAILURE);
+
+    strcpy(libro->autor->nombre, nombreAutor);
+    libro->Autor->anioNacimiento = anioNacimiento;
+
+  }
 
 /*
 Ejercicio 7: Lista enlazada de números
