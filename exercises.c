@@ -65,7 +65,14 @@ int *filterEvenNumbers(int arr[], int size, int *newSize)
         nuevoArreglo[i] = arr[i];
       }
     }
+
+  nuevoArreglo = (int *)realloc(nuevoArreglo, *newSize * sizeof(int));
+
+  if (nuevoArreglo == NULL) exit(EXIT_FAILURE);
+  
   return nuevoArreglo; 
+
+  
 }
 
 /*
