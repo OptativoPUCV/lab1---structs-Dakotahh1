@@ -119,8 +119,11 @@ int checkSorted(int arr[], int size)
     {
       if (arr[i] > arr[i - 1]) 
         ascendente = true;
+      else ascendente = false;
+      
       if (arr[i] < arr[i - 1])
         descendiente = true;
+      else descendiente = false;
     }
 
   if (ascendente) return 1;
