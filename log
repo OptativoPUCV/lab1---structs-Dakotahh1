@@ -364,3 +364,9 @@ In function ‘strcpy’,
 cc1: all warnings being treated as errors
 Compilation failed
 e48640c
+Thu 14 Mar 2024 08:37:18 PM UTC: 
+ exercises.c | 13 +++++++------
+ 1 file changed, 7 insertions(+), 6 deletions(-)
+ tests:  0|0
+Test Filter Even Numbers...
+0c49445

@@ -135,22 +135,23 @@ typedef struct {
 
 void inicializarLibro(Libro *libro, const char *titulo, const char *nombreAutor,
                       int anioNacimiento, int anioPublicacion) 
-  {
-    libro = (Libro *)malloc(sizeof(Libro));
+{
+  libro = (Libro *)malloc(sizeof(Libro));
 
-    if (libro == NULL) exit(EXIT_FAILURE);
+  if (libro == NULL) exit(EXIT_FAILURE);
 
-    strcpy(libro->titulo, titulo);
-    libro->anioPublicacion = anioPublicacion;  
+  Autor autor;
+  
+  strcpy(autor.nombre, nombreAutor);
+  autor.anioNacimiento = anioNacimiento;
 
-    libro = (Autor *)malloc(sizeof(Autor));
-
-    if (libro == NULL) exit(EXIT_FAILURE);
+  strcpy(libro->titulo, titulo);
+  libro->anioPublicacion = anioPublicacion;  
     
-    strcpy(libro->autor.nombre, nombreAutor);
-    libro->autor.anioNacimiento = anioNacimiento;
+  strcpy(libro->autor.nombre, autor.nombre);
+  libro->autor.anioNacimiento = autor.anioNacimiento;
 
-  }
+}
 
 /*
 Ejercicio 7: Lista enlazada de números
