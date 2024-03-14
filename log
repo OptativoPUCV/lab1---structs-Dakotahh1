@@ -245,3 +245,9 @@ exercises.c:149:22: error: invalid operands to binary == (have ‘Autor’ and �
       |              Autor
 Compilation failed
 a3a4369
+Thu 14 Mar 2024 05:39:46 PM UTC: 
+ exercises.c | 4 ----
+ 1 file changed, 4 deletions(-)
+ tests:  0|5
+total_score: 20/70
+38c134f
