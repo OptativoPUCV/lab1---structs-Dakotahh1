@@ -51,7 +51,7 @@ newsize apunta a una dirección válida que no ha sido inicializada con nigún v
 */
 int *filterEvenNumbers(int arr[], int size, int *newSize) 
 { 
-  *newSize = 0;
+  int aux = 0;
   
   int *nuevoArreglo = (int *)malloc(sizeof(int));
 
@@ -61,11 +61,13 @@ int *filterEvenNumbers(int arr[], int size, int *newSize)
     {
       if (arr[i] % 2 == 0)
       {
-        (*newSize)++;
+        aux++;
         nuevoArreglo[i] = arr[i];
       }
     }
-
+  
+  *newSize = aux;
+  
   nuevoArreglo = realloc(nuevoArreglo, *newSize * sizeof(int));
 
   if (nuevoArreglo == NULL) exit(EXIT_FAILURE);
