@@ -67,11 +67,9 @@ int *filterEvenNumbers(int arr[], int size, int *newSize)
     }
   
   nuevoArreglo = realloc(nuevoArreglo, *newSize * sizeof(int));
-
   if (nuevoArreglo == NULL) exit(EXIT_FAILURE);
   
   return nuevoArreglo; 
-  
 }
 
 /*
@@ -143,7 +141,12 @@ void inicializarLibro(Libro *libro, const char *titulo, const char *nombreAutor,
     if (libro == NULL) exit(EXIT_FAILURE);
 
     strcpy(libro->titulo, titulo);
-    libro->anioPublicacion = anioPublicacion;    
+    libro->anioPublicacion = anioPublicacion;  
+
+    libro = (Autor *)malloc(sizeof(Autor));
+
+    if (libro == NULL) exit(EXIT_FAILURE);
+    
     strcpy(libro->autor.nombre, nombreAutor);
     libro->autor.anioNacimiento = anioNacimiento;
 
