@@ -61,13 +61,10 @@ int *filterEvenNumbers(int arr[], int size, int *newSize)
     {
       if (arr[i] % 2 == 0)
       {
+        nuevoArreglo[*newSize] = arr[i];
         (*newSize)++;
-        nuevoArreglo[i] = arr[i];
       }
     }
-  
-  nuevoArreglo = realloc(nuevoArreglo, *newSize * sizeof(int));
-  if (nuevoArreglo == NULL) exit(EXIT_FAILURE);
   
   return nuevoArreglo; 
 }
@@ -136,8 +133,6 @@ typedef struct {
 void inicializarLibro(Libro *libro, const char *titulo, const char *nombreAutor,
                       int anioNacimiento, int anioPublicacion) 
 {
- // libro = (Libro *)malloc(sizeof(Libro));
-  //if (libro == NULL) exit(EXIT_FAILURE);
 
   Autor autor;
   
