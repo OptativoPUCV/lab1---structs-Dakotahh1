@@ -33,12 +33,12 @@ void reverseArray(int arr[], int size)
 {
   int aux = 0;
 
-  for(int i = size; i > 0; i--)
+  for(int i = 0; i < size/2; i++))
     {
-      arr[aux] = arr[i];
-      aux ++;
+      aux = arr[i];
+      arr[i] = arr[size - i - 1];
+      arr[size - i - 1] = aux;
     }
-
 }
 
 /*
@@ -68,7 +68,7 @@ int *filterEvenNumbers(int arr[], int size, int *newSize)
           }
         }
     }
-  return NULL; 
+  return 0; 
 }
 
 /*

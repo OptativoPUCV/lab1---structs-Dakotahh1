@@ -263,3 +263,17 @@ Thu 14 Mar 2024 05:55:12 PM UTC:
  tests:  0|5
 total_score: 20/70
 392f9b9
+Thu 14 Mar 2024 06:04:28 PM UTC: 
+ exercises.c | 10 +++++-----
+ 1 file changed, 5 insertions(+), 5 deletions(-)
+In file included from test.c:1:
+exercises.c: In function ‘reverseArray’:
+exercises.c:36:34: error: expected statement before ‘)’ token
+   36 |   for(int i = 0; i < size/2; i++))
+      |                                  ^
+exercises.c:38:17: error: ‘i’ undeclared (first use in this function)
+   38 |       aux = arr[i];
+      |                 ^
+exercises.c:38:17: note: each undeclared identifier is reported only once for each function it appears in
+Compilation failed
+6838243
