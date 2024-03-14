@@ -201,3 +201,13 @@ exercises.c:128:12: error: ‘Libro’ has no member named ‘Autor’; did you 
       |            autor
 Compilation failed
 c18d5a9
+Thu 14 Mar 2024 05:28:23 PM UTC: 
+ exercises.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+In file included from test.c:1:
+exercises.c: In function ‘inicializarLibro’:
+exercises.c:123:20: error: incompatible types when assigning to type ‘Autor’ from type ‘Autor *’
+  123 |     libro->autor = (Autor *)malloc(sizeof(Autor));
+      |                    ^
+Compilation failed
+a1ca407
