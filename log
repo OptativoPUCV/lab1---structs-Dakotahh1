@@ -211,3 +211,18 @@ exercises.c:123:20: error: incompatible types when assigning to type ‘Autor’
       |                    ^
 Compilation failed
 a1ca407
+Thu 14 Mar 2024 05:28:50 PM UTC: 
+ exercises.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:1:
+exercises.c: In function ‘inicializarLibro’:
+exercises.c:123:21: error: ‘autor’ undeclared (first use in this function); did you mean ‘Autor’?
+  123 |     libro->autor = (autor *)malloc(sizeof(autor));
+      |                     ^~~~~
+      |                     Autor
+exercises.c:123:21: note: each undeclared identifier is reported only once for each function it appears in
+exercises.c:123:28: error: expected expression before ‘)’ token
+  123 |     libro->autor = (autor *)malloc(sizeof(autor));
+      |                            ^
+Compilation failed
+45a87a3
