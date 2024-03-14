@@ -81,7 +81,32 @@ ordenados de menor a mayor y sus tamaños, y luego fusione estos dos
 arreglos en un tercer arreglo también ordenado de menor a mayor.
 */
 void mergeSortedArrays(int arr1[], int size1, int arr2[], int size2,
-                       int result[]) {}
+                       int result[]) 
+{
+  int newSize = size1 + size2;
+
+  for (size_t i = 0; i < newSize; i++) {
+
+    if (i < size1) 
+      result[i] = arr1[i];
+    else
+    result[i] = arr2[i - size1];
+
+  }
+
+  for (size_t i = 0; i < newSize - 1; i++) {
+    for (size_t j = 0; j < newSize - i - 1; j++) {
+
+      if (result[j] > result[j + 1]) {
+
+        int tempItem = result[j];
+        result[j] = result[j+1];
+        result[j+1] = tempItem;
+
+      }
+    }
+  }
+}
 
 /*
 Ejercicio 5: Comprobación de Ordenación
@@ -120,10 +145,9 @@ void inicializarLibro(Libro *libro, const char *titulo, const char *nombreAutor,
     strcpy(libro->titulo, titulo);
     libro->anioPublicacion = anioPublicacion;
 
-    libro->autor = (autor *)malloc(sizeof(autor));
-
+    libro->autor = (*Autor) malloc(sizeof(Autor));
+    if (libro->autor == NULL) exit(EXIT_FAILURE);
     
-
     strcpy(libro->autor.nombre, nombreAutor);
     libro->autor.anioNacimiento = anioNacimiento;
 

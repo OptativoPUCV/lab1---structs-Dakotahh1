@@ -226,3 +226,22 @@ exercises.c:123:28: error: expected expression before ‘)’ token
       |                            ^
 Compilation failed
 45a87a3
+Thu 14 Mar 2024 05:38:32 PM UTC: 
+ exercises.c | 32 ++++++++++++++++++++++++++++----
+ 1 file changed, 28 insertions(+), 4 deletions(-)
+In file included from test.c:1:
+exercises.c: In function ‘inicializarLibro’:
+exercises.c:148:22: error: expected expression before ‘Autor’
+  148 |     libro->autor = (*Autor) malloc(sizeof(Autor));
+      |                      ^~~~~
+exercises.c:148:28: error: expected ‘;’ before ‘malloc’
+  148 |     libro->autor = (*Autor) malloc(sizeof(Autor));
+      |                            ^~~~~~~
+      |                            ;
+exercises.c:149:22: error: invalid operands to binary == (have ‘Autor’ and ‘void *’)
+  149 |     if (libro->autor == NULL) exit(EXIT_FAILURE);
+      |         ~~~~~~~~~~~~ ^~
+      |              |
+      |              Autor
+Compilation failed
+a3a4369
