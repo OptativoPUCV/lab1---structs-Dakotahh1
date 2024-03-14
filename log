@@ -145,3 +145,25 @@ exercises.c:128:12: error: ‘Libro’ has no member named ‘Autor’; did you 
       |            autor
 Compilation failed
 631e5b1
+Thu 14 Mar 2024 05:24:55 PM UTC: 
+ exercises.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:1:
+exercises.c: In function ‘inicializarLibro’:
+exercises.c:123:20: error: incompatible types when assigning to type ‘Autor’ from type ‘Autor *’
+  123 |     libro->autor = (Autor *)malloc(sizeof(Autor));
+      |                    ^
+exercises.c:125:22: error: invalid operands to binary == (have ‘Autor’ and ‘void *’)
+  125 |     if (libro->autor == NULL) exit(EXIT_FAILURE);
+      |         ~~~~~~~~~~~~ ^~
+      |              |
+      |              Autor
+exercises.c:127:24: error: invalid type argument of ‘->’ (have ‘Autor’)
+  127 |     strcpy(libro->autor->nombre, nombreAutor);
+      |                        ^~
+exercises.c:128:12: error: ‘Libro’ has no member named ‘Autor’; did you mean ‘autor’?
+  128 |     libro->Autor->anioNacimiento = anioNacimiento;
+      |            ^~~~~
+      |            autor
+Compilation failed
+34ffb54
