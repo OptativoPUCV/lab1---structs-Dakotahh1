@@ -214,5 +214,5 @@ Nodo *crearListaEnlazada(int arr[], int size)
       
       ultimoNodo = nuevoNodo;
     }
-  return NULL; 
+  return listaEnlazada;
 }
