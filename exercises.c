@@ -126,7 +126,7 @@ int checkSorted(int arr[], int size)
         descendiente = true;
       }  
     }
-  if 
+
   if (ascendente == true && descendiente == false) 
   {
     return 1;
