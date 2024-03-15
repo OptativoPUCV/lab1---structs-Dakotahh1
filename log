@@ -484,3 +484,23 @@ exercises.c:198:9: error: variable ‘ultimoNodo’ set but not used [-Werror=un
 cc1: all warnings being treated as errors
 Compilation failed
 7e76bf9
+Fri 15 Mar 2024 06:51:51 PM UTC: 
+ exercises.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from /nix/store/4pqv2mwdn88h7xvsm7a5zplrd8sxzvw0-glibc-2.35-163-dev/include/string.h:33,
+                 from exercises.c:5,
+                 from test.c:1:
+exercises.c: In function ‘crearListaEnlazada’:
+exercises.c:198:21: error: invalid initializer
+  198 |   Nodo ultimoNodo = NULL;
+      |                     ^~~~
+In file included from test.c:1:
+exercises.c:207:22: error: incompatible types when assigning to type ‘Nodo’ {aka ‘struct nodo’} from type ‘Nodo *’ {aka ‘struct nodo *’}
+  207 |         ultimoNodo = nuevoNodo;
+      |                      ^~~~~~~~~
+exercises.c:198:8: error: variable ‘ultimoNodo’ set but not used [-Werror=unused-but-set-variable]
+  198 |   Nodo ultimoNodo = NULL;
+      |        ^~~~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+4f66054
